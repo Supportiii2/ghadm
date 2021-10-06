@@ -83,6 +83,5 @@ class Post(BaseModel):
 
 def can_be_accessed_by(self, user: types.User):
     return user.id in whitelist
-        return access_granted
 
 db.create_tables([User, Post], safe = True)
