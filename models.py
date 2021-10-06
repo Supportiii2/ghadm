@@ -81,7 +81,7 @@ class Post(BaseModel):
         mentions.append(new_mention.lower())
         self.set_scope_mentions(set(mentions))
 
-def can_be_accessed_by(self, user: types.User):
-    return user.id in whitelist
+    def can_be_accessed_by(self, user: types.User):
+        return user.id in whitelist
 
 db.create_tables([User, Post], safe = True)
