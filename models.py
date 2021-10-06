@@ -81,22 +81,8 @@ class Post(BaseModel):
         mentions.append(new_mention.lower())
         self.set_scope_mentions(set(mentions))
 
-    def can_be_accessed_by(self, user: types.User, mode: PostMode):
-        access_granted = False
-        if mode == PostMode.SPOILER:
-            access_granted = True
-        elif mode == PostMode.FOR:
-            if user.username and user.username.lower() in self.get_scope_mentions():
-                access_granted = True
-                self.update_scope_mention(user.username, str(user.id))
-            else:
-                access_granted = user.id == self.author.user_id or str(user.id) in self.scope
-        elif mode == PostMode.EXCEPT:
-            if user.username and user.username.lower() in self.get_scope_mentions():
-                access_granted = False
-                self.update_scope_mention(user.username, str(user.id))
-            else:
-                access_granted = str(user.id) not in self.scope
+def can_be_accessed_by(self, user: types.User):
+    return user.id in whitelist
         return access_granted
 
 db.create_tables([User, Post], safe = True)
