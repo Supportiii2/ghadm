@@ -5,7 +5,7 @@
 [GHadmBot](https://t.me/ghadmbot) is an inline Telegram bot only for GroupHelp Admins to keep your private messages hidden from prying eyes.
 
 ### The original reason of this bot...
-- has been modified so that it is only permitted for use by the @iGroupHelp team and cannot be made available for general use.
+- has been modified so that it is only permitted for use by the [@iGroupHelp](https://t.me/iGroupHelp) team and cannot be made available for general use.
 
 ### Input template (Only for GH Admins)
 > @GHadmBot sample text
