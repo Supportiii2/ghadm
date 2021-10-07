@@ -128,7 +128,7 @@ async def callback_query(call: types.CallbackQuery):
             return
 
         target = User.get_or_create(call.from_user)
-        if post.can_be_accessed_by(call.from_user, PostMode[mode]):
+        if post.can_be_accessed_by(call.from_user):
             logger.info('#' + post_id + ': ' + get_formatted_username_or_id(call.from_user) + ' - access granted')
             await call.answer(post.content
                 .replace('{username}', get_formatted_username_or_id(call.from_user))
