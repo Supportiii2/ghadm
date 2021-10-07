@@ -36,11 +36,11 @@ locale_de.except_title = 'Akzeptiere %s'
 locale_it.except_title = 'Tranne %s'
 
 # SPOILER_TITLE
-locale_en.spoiler_title = 'Spoiler'
+locale_en.spoiler_title = 'ADM Messaggio'
 locale_ru.spoiler_title = 'Спойлер'
 locale_uk.spoiler_title = 'Спойлер'
-locale_de.spoiler_title = 'Spoiler'
-locale_it.spoiler_title = 'Spoiler'
+locale_de.spoiler_title = 'ADM Nachricht'
+locale_it.spoiler_title = 'ADM message'
 
 # TOO_LONG_MESSAGE
 locale_en.too_long_message = '🥺 Sorry, your message can\'t be sent as it exceeds the limit of 200 characters.'
@@ -64,11 +64,11 @@ locale_de.except_message = 'Private Nachricht an alle außer %s.'
 locale_it.except_message = 'Messaggio privato per tutti tranne %s.'
 
 # SPOILER_MESSAGE
-locale_en.spoiler_message = 'Public spoiler message.'
+locale_en.spoiler_message = 'A message to all GH admins:'
 locale_ru.spoiler_message = 'Публичное сообщение под спойлером.'
 locale_uk.spoiler_message = 'Публічне повідомлення під спойлером.'
-locale_de.spoiler_message = 'Öffentlicher Spoiler für alle:'
-locale_it.spoiler_message = 'Messaggio contenente spoiler.'
+locale_de.spoiler_message = 'Eine Nachricht an alle GH Admins:'
+locale_it.spoiler_message = 'Un messaggio a tutti gli amministratori di GH:'
 
 # GROUP_GREETING_MESSAGE
 locale_en.group_greeting_message = (
@@ -148,11 +148,11 @@ locale_de.not_accessible = 'Der Inhalt ist nicht mehr sichtbar.'
 locale_it.not_accessible = 'Questo contenuto non è più accessibile.'
 
 # VIEW
-locale_en.view = 'View'
-locale_ru.view = 'Открыть'
-locale_uk.view = 'Відкрити'
-locale_de.view = 'Ansehen'
-locale_it.view = 'Vedi'
+locale_en.view = '👀 View'
+locale_ru.view = '👀 Открыть'
+locale_uk.view = '👀 Відкрити'
+locale_de.view = '👀 Ansehen'
+locale_it.view = '👀 Vedi'
 
 # AND_CONNECTOR
 locale_en.and_connector = 'and'
