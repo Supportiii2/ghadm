@@ -134,11 +134,11 @@ locale_de.too_long_description = 'Bitte fasse dich etwas kürzer und überschrei
 locale_it.too_long_description = 'Perfavore accorcia la lunghezza del tuo messaggio in modo che non superi i 200 caratteri.'
 
 # NOT_ALLOWED
-locale_en.not_allowed = 'You are not allowed to view this content.'
+locale_en.not_allowed = 'You are not a GroupHelp Admin!'
 locale_ru.not_allowed = 'Вам запрещено просматривать этот контент.'
 locale_uk.not_allowed = 'Вам заборонено переглядати цей контент.'
-locale_de.not_allowed = 'Dir ist nicht gestattet, diesen Inhalt zu lesen.'
-locale_it.not_allowed = 'Non hai il permesso per vedere questo messaggio.'
+locale_de.not_allowed = 'Du bist kein GroupHelp Admin!'
+locale_it.not_allowed = 'Lei non è un amministratore di GroupHelp!'
 
 # NOT_ACCESSIBLE
 locale_en.not_accessible = 'This content is no longer accessible.'
