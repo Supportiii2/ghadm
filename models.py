@@ -9,6 +9,7 @@ from playhouse.db_url import connect
 from utils import get_formatted_username_or_id, PostMode
 
 db = connect(os.environ['DATABASE_URL'])
+whitelist = os.environ['WHITELIST'].split(' ')
 
 class BaseModel(Model):
     class Meta:
