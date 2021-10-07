@@ -14,7 +14,6 @@ from resources import Resources
 from utils import get_formatted_username_or_id
 
 logger.add(os.environ['LOG_PATH'])
-whitelist = os.environ['WHITELIST'].split(' ')
 rsc = Resources(locales)
 
 inline_query_regex = re.compile(r'^.+([ \n](@\w+|id[0-9]+))+$')
