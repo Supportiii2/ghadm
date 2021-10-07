@@ -9,7 +9,7 @@ from playhouse.db_url import connect
 from utils import get_formatted_username_or_id, PostMode
 
 db = connect(os.environ['DATABASE_URL'])
-whitelist = os.environ['WHITELIST'].split(' ')
+whitelist = [int(x) for x in os.environ['WHITELIST'].split(' ')]
 
 class BaseModel(Model):
     class Meta:
@@ -83,6 +83,6 @@ class Post(BaseModel):
         self.set_scope_mentions(set(mentions))
 
     def can_be_accessed_by(self, user: types.User):
-        return user.id in whitelist
+        return str(user.id) in whitelist
 
 db.create_tables([User, Post], safe = True)
