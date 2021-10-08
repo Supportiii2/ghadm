@@ -56,7 +56,7 @@ class QueryResults:
 class Keyboards:
     def info_keyboard(self):
         return types.InlineKeyboardMarkup(inline_keyboard=
-              [types.InlineKeyboardButton('🏠 iGroupHelp',    url='https://t.me/iGroupHelp')])
+             [[types.InlineKeyboardButton('🏠 iGroupHelp',    url='https://t.me/iGroupHelp')]])
 
 class Media:
     def group_greeting_sticker_id(self):
