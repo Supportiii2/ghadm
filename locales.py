@@ -94,10 +94,7 @@ locale_it.group_greeting_message = (
 
 # INFO_MESSAGE
 locale_en.info_message = (
-        'If you still have questions after reading the article, you can contact support or simply ask '
-        'for help in our public chat at any time you want.\n\n'
-        '👥 Public chat: @hidethisbot_chat\n'
-        '⚙ Support: @undrcrxwn')
+        '👋 Hello! This bot is exclusively for communication between @GroupHelp admins.')
 locale_ru.info_message = (
         'Если у вас остались вопросы после прочтения статьи, вы можете в любое время обратиться в '
         'поддержку или попросить о помощи в нашем публичном чате.\n\n'
@@ -109,15 +106,9 @@ locale_uk.info_message = (
         '👥 Публічний чат: @hidethisbot_chat\n'
         '⚙ Підтримка: @undrcrxwn')
 locale_de.info_message = (
-        'Wenn du nach dem Lesen des Artikels noch Fragen hast, kannst du den Support kontaktieren oder einfach '
-        'in unserem öffentlichen Chat um Hilfe bitten, wann immer du willst.\n\n'
-        '👥 öffentlichen Chat: @hidethisbot_chat\n'
-        '⚙ Hilfe: @undrcrxwn')
+        '👋 Hallo! Dieser Bot ist ausschließlich zur Kommunikation zwischen @GroupHelpBot-Admins.')
 locale_it.info_message = (
-         'Se hai ancora domande dopo aver letto questo articolo, puoi contattare il supporto nella nostra '
-         'chat pubblica quando vuoi.\n\n'
-         '👥 Gruppo pubblico: @hidethisbot_chat\n'
-         '⚙ Supporto: @undrcrxwn')
+         '👋 Ciao! Questo bot è esclusivamente per la comunicazione tra gli amministratori di @GroupHelp.')
 
 # HOW_TO_USE
 locale_en.how_to_use = 'How to use this bot?'
