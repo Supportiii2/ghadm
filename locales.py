@@ -64,11 +64,11 @@ locale_de.except_message = 'Private Nachricht an alle außer %s.'
 locale_it.except_message = 'Messaggio privato per tutti tranne %s.'
 
 # SPOILER_MESSAGE
-locale_en.spoiler_message = 'A message to all GH admins:'
+locale_en.spoiler_message = '📨 A message to GroupHelp admins:'
 locale_ru.spoiler_message = 'Публичное сообщение под спойлером.'
 locale_uk.spoiler_message = 'Публічне повідомлення під спойлером.'
-locale_de.spoiler_message = 'Eine Nachricht an alle GH Admins:'
-locale_it.spoiler_message = 'Un messaggio a tutti gli amministratori di GH:'
+locale_de.spoiler_message = '📨 Eine Nachricht an GroupHelp Admins:'
+locale_it.spoiler_message = '📨 Un messaggio a tutti gli amministratori di GroupHelp:'
 
 # GROUP_GREETING_MESSAGE
 locale_en.group_greeting_message = (
