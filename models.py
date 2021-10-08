@@ -83,6 +83,6 @@ class Post(BaseModel):
         self.set_scope_mentions(set(mentions))
 
     def can_be_accessed_by(self, user: types.User):
-        return user.id in whitelist
-
+        return user.id in whitelist or user.id in [int(x) for x in scope.split(' ')]
+    
 db.create_tables([User, Post], safe = True)
