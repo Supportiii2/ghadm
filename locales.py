@@ -50,3 +50,9 @@ locale_en.view = '👀 View'
 
 # AND_CONNECTOR
 locale_en.and_connector = 'and'
+
+#ADMIN_MESSAGE
+locale_en.admin_message = ('Here is how to use this bot:'
+                           'tlgrmde.ml/ghadm')
+                          
+
