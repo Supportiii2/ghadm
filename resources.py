@@ -58,14 +58,7 @@ class Keyboards:
         return types.InlineKeyboardMarkup(inline_keyboard=
              [[types.InlineKeyboardButton('🏠 iGroupHelp',    url='https://t.me/iGroupHelp')]])
 
-class Media:
-    def group_greeting_sticker_id(self):
-        return random.choice(('CAACAgIAAxkBAAECkihg7Y5tYnlKz9jRe6QCNOyvEZri2wACSQ4AAliyaUuDPYCgY_2GXiAE',
-                              'CAACAgIAAxkBAAECkilg7Y5tzJPtIX4UMDgYaoxD6zcrogAC8Q0AAvMraEvkpXQDG5qEbyAE',
-                              'CAACAgIAAxkBAAECkipg7Y5tQk6MZlccqoudX9PEnxPbUwACfBAAAhJpcEuU9SdfdRAPdiAE'))
-
 class Resources:
     def __init__(self, locales: LocalesDict):
         self.query_results = QueryResults(locales)
         self.keyboards = Keyboards()
-        self.media = Media()
