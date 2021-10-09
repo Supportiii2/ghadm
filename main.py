@@ -35,10 +35,10 @@ def create_post(author: User, content: str, scope: set = ()):
             content = content,
             scope = ' '.join(scope).replace('@', ''),
             creation_time = datetime.now())
-        logger.info('#' + str(result.get_id()) + ' has been created by ' + get_formatted_username_or_id(author))
+        logger.info('#' + str(result.get_id()) + ' von ' + get_formatted_username_or_id(author))
         return result
     except Exception as e:
-        logger.error('new post cannot be created by ' + get_formatted_username_or_id(author))
+        logger.error('Post kann nicht erstellt werden von ' + get_formatted_username_or_id(author))
         logger.error(e)
         return
 
@@ -97,23 +97,6 @@ async def inline_query_spoiler(inline_query: types.InlineQuery):
             get_formatted_username_or_id(inline_query.from_user) +
             ' with payload: "' + inline_query.query + '"')
 
-@dp.inline_handler()
-async def inline_query_help(inline_query: types.InlineQuery):
-    try:
-        await inline_query.answer(
-            [], switch_pm_text = locales[inline_query.from_user.language_code].how_to_use,
-            cache_time = 0,
-            switch_pm_parameter  = 'how_to_use')
-        target = User.get_or_create(inline_query.from_user)
-        target.inline_queries_count += 1
-        target.save()
-    except Exception as e:
-        logger.error(e)
-        logger.warning(
-            'cannot handle inline query help from ' +
-            get_formatted_username_or_id(inline_query.from_user) +
-            ' with payload: "' + inline_query.query + '"')
-
 @dp.callback_query_handler()
 async def callback_query(call: types.CallbackQuery):
     try:
@@ -167,7 +150,7 @@ async def send_info(message: types.Message):
         if (command is not None and
             command.lower().endswith((await bot.get_me()).username.lower())):
             command = command.split('@')[0]
-        if command in ['/start', '/help', '/info']:
+        if command in ['/start']:
             is_tracked_user = True
             await message.answer(
                 text = locales[message.from_user.language_code].info_message,
@@ -180,26 +163,37 @@ async def send_info(message: types.Message):
     except Exception as e:
         logger.error(e)
         logger.warning('cannot send info to chat_id=' + str(message.chat.id))
-
-@dp.my_chat_member_handler(
-    lambda message: message.new_chat_member.status == types.ChatMemberStatus.MEMBER,
-    chat_type = (types.ChatType.GROUP, types.ChatType.SUPERGROUP))
-async def send_group_greeting(message: types.ChatMemberUpdated):
+        
+@dp.message_handler()
+async def send_info(message: types.Message):
     try:
-        bot_user = await bot.get_me()
-        await bot.send_sticker(message.chat.id, rsc.media.group_greeting_sticker_id())
-        await bot.send_message(
-            message.chat.id,
-            text = locales[message.from_user.language_code].group_greeting_message
-                   % (bot_user.full_name, bot_user.username),
-            parse_mode = 'html',
-            disable_web_page_preview = True)
+        if message.chat.id in ignored_chat_ids:
+            return
+        Thread(target = ignore, args = (message.chat.id, 1)).start()
+        is_tracked_user = message.chat.type == types.ChatType.PRIVATE
+
+        command = message.get_command()
+        if (command is not None and
+            command.lower().endswith((await bot.get_me()).username.lower())):
+            command = command.split('@')[0]
+        if command in ['/admin']:
+            is_tracked_user = True
+            await message.answer(
+                text = locales[message.from_user.language_code].admin_message,
+                reply_markup = rsc.keyboards.info_keyboard(),
+                disable_web_page_preview = True)
+        if is_tracked_user:
+            target = User.get_or_create(message.from_user)
+            target.has_dialog = True
+            target.save()
     except Exception as e:
         logger.error(e)
+        logger.warning('cannot send adminhelp to chat_id=' + str(message.chat.id))
+
 
 if __name__ == '__main__':
     try:
-        logger.info('Start polling...')
+        logger.info('Starte...')
         executor.start_polling(dp, skip_updates = True)
     except Exception as e:
         logger.error(e)
