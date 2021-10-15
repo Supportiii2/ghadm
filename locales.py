@@ -38,7 +38,7 @@ locale_de.except_message = 'Private Nachricht für alle außer %s.'
 
 # SPOILER_MESSAGE
 locale_en.spoiler_message = '📨 A message to GroupHelp admins:'
-locale_en.spoiler_message = '📨 Eine Nachricht an GroupHelp Admins:'
+locale_de.spoiler_message = '📨 Eine Nachricht an GroupHelp Admins:'
 
 # GROUP_GREETING_MESSAGE
 locale_en.group_greeting_message = '👋 Hello! This bot is exclusively for communication between @GroupHelp admins.'
