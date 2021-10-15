@@ -1,6 +1,7 @@
 from locales_dict import Locale, LocalesDict
 
 locale_en = Locale()
+locale_de = Locale()
 
 locales = LocalesDict({
     'en': locale_en
